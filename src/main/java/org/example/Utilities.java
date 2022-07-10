@@ -3,7 +3,7 @@ package org.example;
 public class Utilities {
 
 
-    private int[] spaces =new int[9];
+    private int[] spaces ;
     public volatile int playerMove;
     public  Utilities(){
         this.spaces=new int[9];
@@ -11,7 +11,7 @@ public class Utilities {
     }
     public String printBoard(){
         String board="#";
-        for (int i=1;i<9;i=i+3) {
+        for (int i=0;i<9;i=i+3) {
             board += spaces[i] + "," + spaces[i+1] + "," + spaces[i+2] + ";";
 
         }
@@ -28,7 +28,7 @@ public class Utilities {
     }
 
     public int checkWin(){
-        boolean freeSspace=true;
+        boolean freeSpace=true;
         for (int i=1;i<9;i=i+3) {
             if (spaces[i-1] == spaces[i] && spaces[i] == spaces[i+1] && spaces[i]!=0)
                 return spaces[i];
@@ -41,8 +41,8 @@ public class Utilities {
         if (spaces[2] == spaces[4] && spaces[2] == spaces[6] && spaces[2]!=0)
             return spaces[2];
         for (int i=0;i<9;i=i++) {
-            if (spaces[i]==0) freeSspace=false;
+            if (spaces[i]==0) freeSpace=false;
         }
-        if (freeSspace) return 3;
+        if (freeSpace) return 3;
         return 0;}
 }

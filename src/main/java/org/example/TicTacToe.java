@@ -27,6 +27,7 @@ public class TicTacToe implements Runnable {
     @Override
     public void run() {
         try {
+            StartTheGame();
             BufferedReader playerInput = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
 
             switch (this.playerId) {
